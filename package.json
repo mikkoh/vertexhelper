@@ -1,6 +1,6 @@
 {
   "name": "vertexhelper",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Generates vertex and index data for rendering meshes",
   "main": "index.js",
   "directories": {

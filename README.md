@@ -39,7 +39,9 @@ Once you've built the vertex builder function you can call it using the above fo
 The next parameters passed in are vertex data.
 
 `vertexData`: You can pass in an array of vertex data.
+
 or
+
 `vData1, vData2, ...`: Numbers which are the vertex data you'd like to add in.
 
 

@@ -6,15 +6,21 @@ module.exports = function( vertexSize, dataLength ) {
 
 	return function( vertices, indices ) {
 
-		var vertexData = Array.isArray( arguments[ 2 ] ) ? arguments[ 2 ] : Array.prototype.slice.call( arguments, 2 ),
+		var doIndices = Array.isArray( indices ) && ( Array.isArray( arguments[ 2 ] ) || typeof arguments[ 2 ] == 'number' ),
+			vertexData = null,
 			curVertex = null,
 			lookUpId = null;
+
+		if( doIndices )
+			vertexData = Array.isArray( arguments[ 2 ] ) ? arguments[ 2 ] : Array.prototype.slice.call( arguments, 2 );
+		else
+			vertexData = Array.isArray( arguments[ 1 ] ) ? arguments[ 1 ] : Array.prototype.slice.call( arguments, 1 );
 
 		while( vertexData.length >= vertexSize ) {
 
 			curVertex = vertexData.splice( 0, vertexSize );
 
-			if( indices ) {
+			if( doIndices ) {
 
 				lookUpId = curVertex.toString();
 
@@ -34,6 +40,7 @@ module.exports = function( vertexSize, dataLength ) {
 				}
 			} else {
 
+				console.log( 'HERE' );
 				vertices.push( curVertex );
 			}
 		}

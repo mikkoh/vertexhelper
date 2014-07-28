@@ -3,8 +3,6 @@ vertexhelper
 
 This is a utility to create vertex and index data.
 
-The data created by vertexhelper can be nicely used with [gl-mesh](https://www.npmjs.org/package/gl-mesh)
-
 Usage
 -----
 [![vertexhelper](https://nodei.co/npm/vertexhelper.png)](https://nodei.co/npm/vertexhelper)
